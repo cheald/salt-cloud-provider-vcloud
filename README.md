@@ -2,7 +2,7 @@ salt-cloud-provider-vcloud
 ==========================
 
 Salt Cloud Provider for VMWare vCloud Directors (5.1) for Salt Cloud ( >=
-v2014.1.0, the integrated salt cloud rather than the standalone component)
+v2014.1.0 and <=v2015.8.1, the integrated salt cloud rather than the standalone component)
 
 Features
 --------
