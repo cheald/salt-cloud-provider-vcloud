@@ -1,2 +1,2 @@
-libcloud>=0.14.1
+libcloud==0.14.1
 salt>=2014.1.0
