@@ -515,14 +515,15 @@ def create_vm(conn, name, image_name, network_name, vdc, size='tiny', dnat_list=
 
     node = wait_for_private_ips(conn, node)
 
-    # get that IP address
-    internal_ip = node.private_ips[0]
-
     rules = {
         'dnat' : dnat_list
     }
 
-    ss_public_ip = create_nat_rules(conn, rules, node, vdc, network_name, network_href )
+    if len(dnat_list) > 0 :
+        ss_public_ip = create_nat_rules(conn, rules, node, vdc, network_name, network_href )
+    else:
+        ss_public_ip = node.private_ips[0]
+
     return (ss_public_ip, node)
 
 def create_nat_rules(conn, rules, node, vdc, network_name, network_href):
